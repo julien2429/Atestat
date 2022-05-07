@@ -154,7 +154,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label1);
             this.Name = "Form8";
-            this.Text = "Form8";
+            this.Text = "Recenzie noua";
             this.Load += new System.EventHandler(this.Form8_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bazaFilmBoxDataSet)).EndInit();

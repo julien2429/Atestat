@@ -344,7 +344,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.shapeContainer1);
             this.Name = "Form4";
-            this.Text = "Form4";
+            this.Text = "Regizori";
             this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bazaFilmBoxDataSet)).EndInit();

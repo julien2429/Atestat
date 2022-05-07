@@ -399,7 +399,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.shapeContainer1);
             this.Name = "Form6";
-            this.Text = "Form6";
+            this.Text = "Actori";
             this.Load += new System.EventHandler(this.Form6_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bazaFilmBoxDataSet)).EndInit();

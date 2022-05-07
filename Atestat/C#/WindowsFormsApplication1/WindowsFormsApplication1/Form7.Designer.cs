@@ -35,13 +35,16 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.userControl11 = new WindowsFormsApplication1.UserControl1();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.ItemTemplate = new Microsoft.VisualBasic.PowerPacks.DataRepeaterItem();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.userControl21 = new WindowsFormsApplication1.UserControl2();
             this.recenzieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bazaFilmBoxDataSet = new WindowsFormsApplication1.BazaFilmBoxDataSet();
             this.filmeBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -49,16 +52,15 @@
             this.tableAdapterManager = new WindowsFormsApplication1.BazaFilmBoxDataSetTableAdapters.TableAdapterManager();
             this.actoriTableAdapter1 = new WindowsFormsApplication1.BazaFilmBoxDataSetTableAdapters.ActoriTableAdapter();
             this.recenzieTableAdapter = new WindowsFormsApplication1.BazaFilmBoxDataSetTableAdapters.RecenzieTableAdapter();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.userControl21 = new WindowsFormsApplication1.UserControl2();
-            this.userControl11 = new WindowsFormsApplication1.UserControl1();
+            this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.recenzieBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bazaFilmBoxDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.filmeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -83,6 +85,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.shapeContainer2);
             this.panel1.Location = new System.Drawing.Point(628, 22);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(588, 628);
@@ -124,6 +127,19 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(529, 292);
             this.flowLayoutPanel1.TabIndex = 6;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
+            // 
+            // userControl11
+            // 
+            this.userControl11.datarDateTimePicker = new System.DateTime(((long)(0)));
+            this.userControl11.listBox1 = null;
+            this.userControl11.listBox2 = null;
+            this.userControl11.listBox3 = null;
+            this.userControl11.Location = new System.Drawing.Point(3, 3);
+            this.userControl11.Name = "userControl11";
+            this.userControl11.Size = new System.Drawing.Size(526, 138);
+            this.userControl11.TabIndex = 0;
+            this.userControl11.utilizator = null;
+            this.userControl11.Load += new System.EventHandler(this.userControl11_Load);
             // 
             // listBox2
             // 
@@ -169,6 +185,16 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "label2";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(17, 13);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(205, 268);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // ItemTemplate
             // 
             this.ItemTemplate.Size = new System.Drawing.Size(495, 123);
@@ -186,6 +212,22 @@
             this.flowLayoutPanel2.Size = new System.Drawing.Size(566, 628);
             this.flowLayoutPanel2.TabIndex = 4;
             this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
+            // 
+            // userControl21
+            // 
+            this.userControl21.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.userControl21.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.userControl21.Img = null;
+            this.userControl21.Location = new System.Drawing.Point(3, 3);
+            this.userControl21.Name = "userControl21";
+            this.userControl21.parentForm = null;
+            this.userControl21.Size = new System.Drawing.Size(259, 312);
+            this.userControl21.TabIndex = 0;
+            this.userControl21.Titlu = null;
+            this.userControl21.Load += new System.EventHandler(this.userControl21_Load);
+            this.userControl21.Click += new System.EventHandler(this.userControl21_Click);
+            this.userControl21.MouseClick += new System.Windows.Forms.MouseEventHandler(this.userControl21_MouseClick);
+            this.userControl21.MouseEnter += new System.EventHandler(this.userControl21_MouseEnter);
             // 
             // recenzieBindingSource
             // 
@@ -228,44 +270,23 @@
             // 
             this.recenzieTableAdapter.ClearBeforeFill = true;
             // 
-            // pictureBox2
+            // rectangleShape1
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(17, 13);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(205, 268);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.rectangleShape1.BorderWidth = 3;
+            this.rectangleShape1.Location = new System.Drawing.Point(14, 10);
+            this.rectangleShape1.Name = "rectangleShape1";
+            this.rectangleShape1.Size = new System.Drawing.Size(210, 273);
             // 
-            // userControl21
+            // shapeContainer2
             // 
-            this.userControl21.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.userControl21.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.userControl21.Img = null;
-            this.userControl21.Location = new System.Drawing.Point(3, 3);
-            this.userControl21.Name = "userControl21";
-            this.userControl21.parentForm = null;
-            this.userControl21.Size = new System.Drawing.Size(259, 312);
-            this.userControl21.TabIndex = 0;
-            this.userControl21.Titlu = null;
-            this.userControl21.Load += new System.EventHandler(this.userControl21_Load);
-            this.userControl21.Click += new System.EventHandler(this.userControl21_Click);
-            this.userControl21.MouseClick += new System.Windows.Forms.MouseEventHandler(this.userControl21_MouseClick);
-            this.userControl21.MouseEnter += new System.EventHandler(this.userControl21_MouseEnter);
-            // 
-            // userControl11
-            // 
-            this.userControl11.datarDateTimePicker = new System.DateTime(((long)(0)));
-            this.userControl11.listBox1 = null;
-            this.userControl11.listBox2 = null;
-            this.userControl11.listBox3 = null;
-            this.userControl11.Location = new System.Drawing.Point(3, 3);
-            this.userControl11.Name = "userControl11";
-            this.userControl11.Size = new System.Drawing.Size(526, 138);
-            this.userControl11.TabIndex = 0;
-            this.userControl11.utilizator = null;
-            this.userControl11.Load += new System.EventHandler(this.userControl11_Load);
+            this.shapeContainer2.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer2.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer2.Name = "shapeContainer2";
+            this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.rectangleShape1});
+            this.shapeContainer2.Size = new System.Drawing.Size(588, 628);
+            this.shapeContainer2.TabIndex = 9;
+            this.shapeContainer2.TabStop = false;
             // 
             // Form7
             // 
@@ -277,16 +298,16 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Name = "Form7";
-            this.Text = "Form7";
+            this.Text = "Filme";
             this.Load += new System.EventHandler(this.Form7_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.recenzieBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bazaFilmBoxDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.filmeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -317,5 +338,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label5;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
+        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape1;
     }
 }

@@ -34,6 +34,9 @@ namespace WindowsFormsApplication1
         }
         private void Form11_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'bazaFilmBoxDataSet.Regizori' table. You can move, or remove it, as needed.
+           
+            // TODO: This line of code loads data into the 'bazaFilmBoxDataSet.Utilizatori' table. You can move, or remove it, as needed.
             // TODO: This line of code loads data into the 'bazaFilmBoxDataSet.Filme' table. You can move, or remove it, as needed.
             bazaFilmBoxDataSet.EnforceConstraints = false;
             this.filmeTableAdapter.FillByTopFilme(this.bazaFilmBoxDataSet.Filme);
@@ -59,11 +62,35 @@ namespace WindowsFormsApplication1
                 }
 
             }
+            this.utilizatoriTableAdapter.FillByNumarRecenziiUtilizatori(this.bazaFilmBoxDataSet.Utilizatori);
+            dt = this.bazaFilmBoxDataSet.Utilizatori;
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                listBox1.Items.Add(dt.Rows[i]["Username"] + " " + dt.Rows[i]["NRecenzii"]);
+            }
+
+            this.regizoriTableAdapter.FillByNumarFilmeRegizor(this.bazaFilmBoxDataSet.Regizori);
+            dt = this.bazaFilmBoxDataSet.Regizori;
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                listBox2.Items.Add(regizoriTableAdapter.ScalarQueryNumePrenumeIDRE(Convert.ToInt32(dt.Rows[i]["IDRE"])).ToString() + " " + dt.Rows[i]["NFilme"]);
+            }
+            this.filmeTableAdapter.FillByNumarPremiiFilme(this.bazaFilmBoxDataSet.Filme);
+            dt = this.bazaFilmBoxDataSet.Filme;
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                listBox3.Items.Add(dt.Rows[i]["Nume"] + " " + dt.Rows[i]["NPremii"] + " premii");
+            }
 
         }
 
         
         private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

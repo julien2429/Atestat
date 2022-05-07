@@ -26,7 +26,7 @@ namespace WindowsFormsApplication1.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;AttachDbFilename=\"F:\\Atestat\\Baza de date\\BazaFilmBox.md" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;AttachDbFilename=\"L:\\Atestat\\Baza de date\\BazaFilmBox.md" +
             "f\";Integrated Security=True;Connect Timeout=30;User Instance=True")]
         public string BazaFilmBoxConnectionString {
             get {

@@ -24,18 +24,30 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void Form9_Load(object sender, EventArgs e)
+        public void populate()
         {
-            // TODO: This line of code loads data into the 'bazaFilmBoxDataSet.Filme' table. You can move, or remove it, as needed.
             this.filmeTableAdapter.Fill(this.bazaFilmBoxDataSet.Filme);
             // TODO: This line of code loads data into the 'bazaFilmBoxDataSet.Actori' table. You can move, or remove it, as needed.
             this.actoriTableAdapter.FillByNumePrenume(this.bazaFilmBoxDataSet.Actori);
+            comboBox3.Items.Clear();
+            comboBox2.Items.Clear();
             for (int i = 0; i < this.bazaFilmBoxDataSet.Actori.Rows.Count; i++)
             {
                 comboBox2.Items.Add(this.bazaFilmBoxDataSet.Actori.Rows[i]["Nume"]);
             }
             // TODO: This line of code loads data into the 'bazaFilmBoxDataSet.Roluri' table. You can move, or remove it, as needed.
-            this.roluriTableAdapter.Fill(this.bazaFilmBoxDataSet.Roluri);
+            this.actoriTableAdapter.Fill(this.bazaFilmBoxDataSet.Actori);
+            for (int i = 0; i < this.bazaFilmBoxDataSet.Actori.Rows.Count; i++)
+            {
+                comboBox3.Items.Add(this.bazaFilmBoxDataSet.Actori.Rows[i]["Nume"] +" "+ this.bazaFilmBoxDataSet.Actori.Rows[i]["Prenume"]);
+            }
+        }
+
+
+        private void Form9_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'bazaFilmBoxDataSet.Filme' table. You can move, or remove it, as needed.
+            populate();
 
         }
 
@@ -44,7 +56,7 @@ namespace WindowsFormsApplication1
             try
             {
 
-                MessageBox.Show(bazaFilmBoxDataSet.Filme.Rows[comboBox1.SelectedIndex]["IDF"].ToString());
+                MessageBox.Show("Adaugare reusita");
                 roluriTableAdapter.InsertQuery(textBox1.Text, Convert.ToInt32(bazaFilmBoxDataSet.Actori.Rows[comboBox2.SelectedIndex]["IDA"]), Convert.ToInt32(bazaFilmBoxDataSet.Filme.Rows[comboBox1.SelectedIndex]["IDF"]));
                 this.Close();
             }
@@ -105,6 +117,33 @@ namespace WindowsFormsApplication1
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.actoriTableAdapter.Fill(this.bazaFilmBoxDataSet.Actori);
+            this.roluriTableAdapter.FillByRoluriActor(this.bazaFilmBoxDataSet.Roluri, Convert.ToInt32(bazaFilmBoxDataSet.Actori.Rows[comboBox3.SelectedIndex]["IDA"]));
+            comboBox4.Items.Clear();
+            for (int i = 0; i < this.bazaFilmBoxDataSet.Roluri.Rows.Count; i++)
+            {
+                    comboBox4.Items.Add(this.bazaFilmBoxDataSet.Roluri.Rows[i]["Npersonaj"]);
+            }
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.roluriTableAdapter.FillByRoluriActor(this.bazaFilmBoxDataSet.Roluri, Convert.ToInt32(bazaFilmBoxDataSet.Actori.Rows[comboBox3.SelectedIndex]["IDA"]));
+            try
+            {
+                roluriTableAdapter.DeleteIDRO(Convert.ToInt32(bazaFilmBoxDataSet.Roluri[comboBox4.SelectedIndex]["IDRO"]));
+                MessageBox.Show("Stergere Reusita");
+                populate();
+            }
+            catch
+            {
+                MessageBox.Show("Eroare");
+            }
+            
         }
     }
 }

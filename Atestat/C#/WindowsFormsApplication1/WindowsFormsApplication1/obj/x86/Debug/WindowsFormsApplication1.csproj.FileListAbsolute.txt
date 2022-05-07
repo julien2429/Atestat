@@ -87,3 +87,4 @@ F:\Atestat\C#\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\Wi
 F:\Atestat\C#\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form9.resources
 F:\Atestat\C#\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.UserControl1.resources
 F:\Atestat\C#\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.UserControl2.resources
+L:\Atestat\C#\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form11.resources

@@ -20,12 +20,20 @@ namespace WindowsFormsApplication1
         {
 
         }
-
-        private void Form5_Load(object sender, EventArgs e)
+        public void populate()
         {
+            // TODO: This line of code loads data into the 'bazaFilmBoxDataSet.Premii' table. You can move, or remove it, as needed.
+            this.premiiTableAdapter.Fill(this.bazaFilmBoxDataSet.Premii);
+            // TODO: This line of code loads data into the 'bazaFilmBoxDataSet.Recenzie' table. You can move, or remove it, as needed.
+            this.recenzieTableAdapter.Fill(this.bazaFilmBoxDataSet.Recenzie);
+            // TODO: This line of code loads data into the 'bazaFilmBoxDataSet.Roluri' table. You can move, or remove it, as needed.
+            this.roluriTableAdapter.Fill(this.bazaFilmBoxDataSet.Roluri);
             // TODO: This line of code loads data into the 'bazaFilmBoxDataSet.Filme' table. You can move, or remove it, as needed.
             bazaFilmBoxDataSet.EnforceConstraints = false;
-            this.filmeTableAdapter.Fill(this.bazaFilmBoxDataSet.Filme);
+
+            comboBox2.Items.Clear();
+            comboBox3.Items.Clear();
+            comboBox4.Items.Clear();
             this.regizoriTableAdapter.Fill(this.bazaFilmBoxDataSet.Regizori);
             DataTable dt = this.bazaFilmBoxDataSet.Regizori;
             for (int i = 0; i < dt.Rows.Count; i++)
@@ -34,8 +42,16 @@ namespace WindowsFormsApplication1
                 comboBox3.Items.Add(dt.Rows[i]["Nume"] + " " + dt.Rows[i]["Prenume"]);
             }
             bazaFilmBoxDataSet.EnforceConstraints = false;
-
-
+            this.filmeTableAdapter.Fill(this.bazaFilmBoxDataSet.Filme);
+            dt = this.bazaFilmBoxDataSet.Filme;
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                comboBox4.Items.Add(dt.Rows[i]["Nume"]);
+            }
+        }
+        private void Form5_Load(object sender, EventArgs e){
+        
+            populate();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -61,7 +77,7 @@ namespace WindowsFormsApplication1
         private void button1_Click(object sender, EventArgs e)
         {
             string a, b;
-            int lungime=0;
+            int lungime = 0;
             a = textBox1.Text;
             b = comboBox2.SelectedItem.ToString();
             lungime = Convert.ToInt32(textBox7.Text);
@@ -71,6 +87,7 @@ namespace WindowsFormsApplication1
                 ImageConverter imgConverter = new ImageConverter();
                 imgBytes = (System.Byte[])imgConverter.ConvertTo(pictureBox1.Image, Type.GetType("System.Byte[]"));
                 this.filmeTableAdapter.InsertQuery(a, dateTimePicker1.Value.ToString(), lungime, this.regizoriTableAdapter.ScalarQueryIDREviaNume(b).Value, imgBytes);
+                populate();
             }
             catch (Exception ex)
             {
@@ -103,16 +120,23 @@ namespace WindowsFormsApplication1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string a;
+            this.filmeTableAdapter.Fill(this.bazaFilmBoxDataSet.Filme);
+            DataTable dt = this.bazaFilmBoxDataSet.Filme;
+            int a = Convert.ToInt32(dt.Rows[comboBox4.SelectedIndex]["IDF"]);
 
-            a = comboBox4.Text;
+
             try
             {
+                recenzieTableAdapter.DeleteFilm(a);
+                premiiTableAdapter.DeleteFilm(a);
+                roluriTableAdapter.DeleteFilm(a);
                 this.filmeTableAdapter.DeleteQuery(a);
+                MessageBox.Show("Stergere reusita");
+                populate();
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("eroare");
+                MessageBox.Show(ex.ToString() + "eroare");
             }
         }
 
@@ -123,7 +147,7 @@ namespace WindowsFormsApplication1
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void fillByNumeSiPrenumeToolStripButton_Click(object sender, EventArgs e)

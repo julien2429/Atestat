@@ -34,10 +34,11 @@ namespace WindowsFormsApplication1
             string b = textBox2.Text;
             try
             {
-                this.Hide();
+                
                 int id = this.utilizatoriTableAdapter.ScalarQueryReturnIdUtilizator(a, b).Value;
                 Form3 pag = new Form3(a);
                 pag.ShowDialog();
+                
 
             }
             catch
@@ -64,9 +65,10 @@ namespace WindowsFormsApplication1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             Form2 a = new Form2();
-            a.Show();
+            a.ShowDialog();
+
         }
     }
 }

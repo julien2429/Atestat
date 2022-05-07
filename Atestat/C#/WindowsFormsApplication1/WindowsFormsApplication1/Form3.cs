@@ -40,7 +40,6 @@ namespace WindowsFormsApplication1
                     button2.Visible = true;
                     button1.Visible = true;
                     button3.Visible = true;
-                    button4.Visible = true;
                     button6.Visible = true;
                 }
 
@@ -106,7 +105,7 @@ namespace WindowsFormsApplication1
 
         private void button5_Click(object sender, EventArgs e)
         {
-            this.Hide();
+
             Form7 f7 = new Form7(utilizatoriTableAdapter.ScalarQueryIDviaUsername(a).Value);
             f7.ShowDialog();
         }

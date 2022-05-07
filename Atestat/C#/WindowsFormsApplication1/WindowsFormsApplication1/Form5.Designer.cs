@@ -36,7 +36,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tableAdapterManager = new WindowsFormsApplication1.BazaFilmBoxDataSetTableAdapters.TableAdapterManager();
             this.regizoriTableAdapter = new WindowsFormsApplication1.BazaFilmBoxDataSetTableAdapters.RegizoriTableAdapter();
-            this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,20 +54,27 @@
             this.filmeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.filmeTableAdapter = new WindowsFormsApplication1.BazaFilmBoxDataSetTableAdapters.FilmeTableAdapter();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.fillByNumeSiPrenumeToolStrip = new System.Windows.Forms.ToolStrip();
-            this.fillByNumeSiPrenumeToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.roluriBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.roluriTableAdapter = new WindowsFormsApplication1.BazaFilmBoxDataSetTableAdapters.RoluriTableAdapter();
+            this.recenzieBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.recenzieTableAdapter = new WindowsFormsApplication1.BazaFilmBoxDataSetTableAdapters.RecenzieTableAdapter();
+            this.premiiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.premiiTableAdapter = new WindowsFormsApplication1.BazaFilmBoxDataSetTableAdapters.PremiiTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bazaFilmBoxDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.regizoriBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.filmeBindingSource)).BeginInit();
-            this.fillByNumeSiPrenumeToolStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roluriBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recenzieBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.premiiBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
@@ -133,16 +139,6 @@
             // regizoriTableAdapter
             // 
             this.regizoriTableAdapter.ClearBeforeFill = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(95, 202);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 43;
-            this.button3.Text = "Sterge";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button1
             // 
@@ -234,7 +230,7 @@
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape2,
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(1192, 470);
+            this.shapeContainer1.Size = new System.Drawing.Size(1192, 431);
             this.shapeContainer1.TabIndex = 44;
             this.shapeContainer1.TabStop = false;
             // 
@@ -292,57 +288,6 @@
             this.comboBox1.ValueMember = "Nume";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // comboBox4
-            // 
-            this.comboBox4.DataSource = this.filmeBindingSource;
-            this.comboBox4.DisplayMember = "Nume";
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(95, 115);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 51;
-            this.comboBox4.ValueMember = "Nume";
-            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(40, 118);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 13);
-            this.label9.TabIndex = 49;
-            this.label9.Text = "Nume";
-            // 
-            // fillByNumeSiPrenumeToolStrip
-            // 
-            this.fillByNumeSiPrenumeToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fillByNumeSiPrenumeToolStripButton});
-            this.fillByNumeSiPrenumeToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.fillByNumeSiPrenumeToolStrip.Name = "fillByNumeSiPrenumeToolStrip";
-            this.fillByNumeSiPrenumeToolStrip.Size = new System.Drawing.Size(1192, 25);
-            this.fillByNumeSiPrenumeToolStrip.TabIndex = 52;
-            this.fillByNumeSiPrenumeToolStrip.Text = "fillByNumeSiPrenumeToolStrip";
-            // 
-            // fillByNumeSiPrenumeToolStripButton
-            // 
-            this.fillByNumeSiPrenumeToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillByNumeSiPrenumeToolStripButton.Name = "fillByNumeSiPrenumeToolStripButton";
-            this.fillByNumeSiPrenumeToolStripButton.Size = new System.Drawing.Size(129, 22);
-            this.fillByNumeSiPrenumeToolStripButton.Text = "FillByNumeSiPrenume";
-            this.fillByNumeSiPrenumeToolStripButton.Click += new System.EventHandler(this.fillByNumeSiPrenumeToolStripButton_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.comboBox4);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Location = new System.Drawing.Point(878, 45);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(264, 345);
-            this.groupBox1.TabIndex = 54;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
@@ -360,15 +305,81 @@
             this.comboBox3.Size = new System.Drawing.Size(121, 21);
             this.comboBox3.TabIndex = 55;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(95, 202);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 43;
+            this.button3.Text = "Sterge";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(40, 118);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.TabIndex = 49;
+            this.label9.Text = "Nume";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(95, 115);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(121, 21);
+            this.comboBox4.TabIndex = 51;
+            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.comboBox4);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Location = new System.Drawing.Point(878, 45);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(264, 345);
+            this.groupBox1.TabIndex = 54;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Stergere";
+            // 
+            // roluriBindingSource
+            // 
+            this.roluriBindingSource.DataMember = "Roluri";
+            this.roluriBindingSource.DataSource = this.bazaFilmBoxDataSet;
+            // 
+            // roluriTableAdapter
+            // 
+            this.roluriTableAdapter.ClearBeforeFill = true;
+            // 
+            // recenzieBindingSource
+            // 
+            this.recenzieBindingSource.DataMember = "Recenzie";
+            this.recenzieBindingSource.DataSource = this.bazaFilmBoxDataSet;
+            // 
+            // recenzieTableAdapter
+            // 
+            this.recenzieTableAdapter.ClearBeforeFill = true;
+            // 
+            // premiiBindingSource
+            // 
+            this.premiiBindingSource.DataMember = "Premii";
+            this.premiiBindingSource.DataSource = this.bazaFilmBoxDataSet;
+            // 
+            // premiiTableAdapter
+            // 
+            this.premiiTableAdapter.ClearBeforeFill = true;
+            // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1192, 470);
+            this.ClientSize = new System.Drawing.Size(1192, 431);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.fillByNumeSiPrenumeToolStrip);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textBox7);
@@ -387,17 +398,18 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.shapeContainer1);
             this.Name = "Form5";
-            this.Text = "Form5";
+            this.Text = "Filme";
             this.Load += new System.EventHandler(this.Form5_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bazaFilmBoxDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.regizoriBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.filmeBindingSource)).EndInit();
-            this.fillByNumeSiPrenumeToolStrip.ResumeLayout(false);
-            this.fillByNumeSiPrenumeToolStrip.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roluriBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recenzieBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.premiiBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -412,7 +424,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private BazaFilmBoxDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private BazaFilmBoxDataSetTableAdapters.RegizoriTableAdapter regizoriTableAdapter;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -431,13 +442,18 @@
         private System.Windows.Forms.BindingSource filmeBindingSource;
         private BazaFilmBoxDataSetTableAdapters.FilmeTableAdapter filmeTableAdapter;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ToolStrip fillByNumeSiPrenumeToolStrip;
-        private System.Windows.Forms.ToolStripButton fillByNumeSiPrenumeToolStripButton;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.BindingSource roluriBindingSource;
+        private BazaFilmBoxDataSetTableAdapters.RoluriTableAdapter roluriTableAdapter;
+        private System.Windows.Forms.BindingSource recenzieBindingSource;
+        private BazaFilmBoxDataSetTableAdapters.RecenzieTableAdapter recenzieTableAdapter;
+        private System.Windows.Forms.BindingSource premiiBindingSource;
+        private BazaFilmBoxDataSetTableAdapters.PremiiTableAdapter premiiTableAdapter;
 
     }
 }
