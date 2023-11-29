@@ -67,16 +67,13 @@
   <ItemGroup>
     <Compile Include="BazaFilmBoxDataSet.cs">
       <DependentUpon>BazaFilmBoxDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="BazaFilmBoxDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BazaFilmBoxDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="BazaFilmBoxDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BazaFilmBoxDataSet1.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -210,25 +207,17 @@
     <None Include="app.config" />
     <None Include="BazaFilmBoxDataSet.xsc">
       <DependentUpon>BazaFilmBoxDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="BazaFilmBoxDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>BazaFilmBoxDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="BazaFilmBoxDataSet.xss">
       <DependentUpon>BazaFilmBoxDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="BazaFilmBoxDataSet1.xsc">
-      <DependentUpon>BazaFilmBoxDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="BazaFilmBoxDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BazaFilmBoxDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="BazaFilmBoxDataSet1.xss">
-      <DependentUpon>BazaFilmBoxDataSet1.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -244,10 +233,10 @@
     <Content Include="3322766-200.png" />
     <Content Include="Filmbox.png" />
     <Content Include="Resources\BazaFilmBox.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\BazaFilmBox_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\3322766-200.png" />
   </ItemGroup>

@@ -35,7 +35,7 @@ namespace WindowsFormsApplication1
             try
             {
                 
-                int id = this.utilizatoriTableAdapter.ScalarQueryReturnIdUtilizator(a, b).Value;
+                int id = (int)this.utilizatoriTableAdapter.ScalarQueryReturnIdUtilizator(a, b);
                 Form3 pag = new Form3(a);
                 pag.ShowDialog();
                 

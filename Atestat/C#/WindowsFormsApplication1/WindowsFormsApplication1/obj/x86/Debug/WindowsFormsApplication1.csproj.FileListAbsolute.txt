@@ -110,5 +110,10 @@ C:\Atestat_test\Atestat\C#\WindowsFormsApplication1\WindowsFormsApplication1\obj
 C:\Atestat_test\Atestat\C#\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.CoreCompileInputs.cache
 C:\Atestat_test\Atestat\C#\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
 C:\Atestat_test\Atestat\C#\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
-C:\Atestat_test\Atestat\C#\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Resources\BazaFilmBox.mdf
 C:\Atestat_test\Atestat\C#\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Resources\BazaFilmBox_log.ldf
+C:\Atestat_test\Atestat\C#\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\BazaFilmBoxDataSet.cs
+C:\Atestat_test\Atestat\C#\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\BazaFilmBoxDataSet.Designer.cs
+C:\Atestat_test\Atestat\C#\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\BazaFilmBoxDataSet.xsc
+C:\Atestat_test\Atestat\C#\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\BazaFilmBoxDataSet.xsd
+C:\Atestat_test\Atestat\C#\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\BazaFilmBoxDataSet.xss
+C:\Atestat_test\Atestat\C#\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Resources\BazaFilmBox.mdf

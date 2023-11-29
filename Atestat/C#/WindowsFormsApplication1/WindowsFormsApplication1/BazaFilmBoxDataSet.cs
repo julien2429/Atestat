@@ -7,9 +7,12 @@
     }
 }
 
-namespace WindowsFormsApplication1.BazaFilmBoxDataSetTableAdapters {
-    
-    
+namespace WindowsFormsApplication1.BazaFilmBoxDataSetTableAdapters
+{
+    partial class RecenzieTableAdapter
+    {
+    }
+
     public partial class FilmeTableAdapter {
     }
 }
