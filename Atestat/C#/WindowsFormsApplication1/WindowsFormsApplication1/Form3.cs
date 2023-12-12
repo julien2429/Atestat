@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -63,6 +64,40 @@ namespace WindowsFormsApplication1
 
         }
 
+        private void addImageToUser()
+        {
+            try
+            {
+                ///this.utilizatoriTableAdapter.UpdateQueryAdaugarePoza(null, a);
+                /*
+                byte[] imgBytes;
+                ImageConverter imgConverter = new ImageConverter();
+                imgBytes = (System.Byte[])imgConverter.ConvertTo(pictureBox1.Image, Type.GetType("System.Byte[]"));
+                this.utilizatoriTableAdapter.UpdateQueryAdaugarePoza(imgBytes, a);
+                */
+                Image img = pictureBox1.Image;
+                byte[] arr;
+                /*
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    arr = ms.ToArray();
+                }
+                this.utilizatoriTableAdapter.UpdateQueryAdaugarePoza(arr, a);
+                */
+
+                using (MemoryStream mStream = new MemoryStream())
+                {
+                    img.Save(mStream, img.RawFormat);
+                    arr = mStream.ToArray();
+                }
+                this.utilizatoriTableAdapter.UpdateQueryAdaugarePoza(arr, a);
+            }
+            catch
+            {
+                MessageBox.Show("Nu s-a reusit adaugarea pozei");
+            }
+        }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -71,18 +106,7 @@ namespace WindowsFormsApplication1
             {
                 pictureBox1.ImageLocation = openFileDialog.FileName;
             }
-            try
-            {
-                this.utilizatoriTableAdapter.UpdateQueryAdaugarePoza(null, a);
-                Byte[] imgBytes = null;
-                ImageConverter imgConverter = new ImageConverter();
-                imgBytes = (System.Byte[])imgConverter.ConvertTo(pictureBox1.Image, Type.GetType("System.Byte[]"));
-                this.utilizatoriTableAdapter.UpdateQueryAdaugarePoza(imgBytes, a);
-            }
-            catch
-            {
-                MessageBox.Show("Nu s-a reusit adaugarea pozei");
-            }
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -125,6 +149,11 @@ namespace WindowsFormsApplication1
         {
             Form11 a = new Form11();
             a.Show();
+        }
+
+        private void pictureBox1_LoadCompleted(object sender, AsyncCompletedEventArgs e)
+        {
+            addImageToUser();
         }
     }
 }
