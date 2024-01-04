@@ -57,7 +57,11 @@ namespace WindowsFormsApplication1
                     Byte[] imgBytes = null;
                     ImageConverter imgConverter = new ImageConverter();
                     imgBytes = (System.Byte[])imgConverter.ConvertTo(pictureBox1.Image, Type.GetType("System.Byte[]"));
-                    this.regizoriTableAdapter.InsertQuery(a, b, data.ToString(), imgBytes);
+                    try { this.regizoriTableAdapter.InsertQuery(a, b, data.ToString(), imgBytes);
+                        this.Close();
+                    }
+                    catch { MessageBox.Show("Something went wrong"); }
+                   
                 }
                 else
                 {

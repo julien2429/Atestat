@@ -88,6 +88,7 @@ namespace WindowsFormsApplication1
                 imgBytes = (System.Byte[])imgConverter.ConvertTo(pictureBox1.Image, Type.GetType("System.Byte[]"));
                 this.filmeTableAdapter.InsertQuery(a, dateTimePicker1.Value.ToString(), lungime, this.regizoriTableAdapter.ScalarQueryIDREviaNume(b).Value, imgBytes);
                 populate();
+                this.Close();
             }
             catch (Exception ex)
             {
